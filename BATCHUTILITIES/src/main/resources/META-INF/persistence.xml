@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+	<persistence-unit name="MC_JPA" transaction-type="JTA">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>jdbc/MC</jta-data-source>
+		<class>es.mc.domain.entidades.TAccesoColectivo</class>
+		<class>es.mc.domain.entidades.TAccesoParking</class>
+		<class>es.mc.domain.entidades.TArchAccesoParking</class>
+		<class>es.mc.domain.entidades.TArchivoParking</class>
+		<class>es.mc.domain.entidades.TErrorAccesoColectivo</class>
+		<class>es.mc.domain.entidades.TErrorAccesoColectivoPK</class>
+		<class>es.mc.domain.entidades.TErrorAccesoParking</class>
+		<class>es.mc.domain.entidades.TErrorAccesoParkingPK</class>
+		<class>es.mc.domain.entidades.TGrupoUsuario</class>
+		<class>es.mc.domain.entidades.TtMensajeError</class>
+		<class>es.mc.domain.entidades.TtUsuarioGrupoUsuario</class>
+		<class>es.mc.domain.entidades.TtUsuarioGrupoUsuarioPK</class>
+		<class>es.mc.domain.entidades.TUsuario</class>
+		<class>es.mc.domain.entidades.TConstanteInternet</class>
+		<class>es.mc.domain.entidades.TtEstadoMovimiento</class>
+		<class>es.mc.domain.entidades.TtTipoAcceso</class>
+		<class>es.mc.domain.entidades.TMatriculaAbonado</class>
+		<class>es.mc.domain.entidades.TtDistintivoAmbiental</class>
+
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect" />
+			<property name="hibernate.show_sql" value="true" />
+		</properties>
+	</persistence-unit>
+</persistence>
