@@ -30,20 +30,6 @@ public class Comunicaciones {
 
     private static final RegistradorBBDD registrador = new RegistradorBBDD();
 
-    public static void envioComunicacionAdjunto(File excel, String nombreCsv, LocalDate fechaBatch) throws Exception {
-        String[] destinatarios = registrador.recogerValorConstante(Constantes.ENVIO_EMAIL_PMR_ACTIVOS, false).split(";");
-        AttachmentType adjunto = new AttachmentType();
-
-        adjunto.setFilename(nombreCsv);
-        adjunto.setContent(Files.readAllBytes(excel.toPath()));
-
-        String mailAsunto = Constantes.ASUNTO_EMAIL_PMR_ACTIVOS + fechaBatch;
-        String mailBody = String.format(Constantes.CUERPO_EMAIL_PMR_ACTIVOS, fechaBatch);
-
-        Util.sendComunicacionMultipleAdjunto(mailAsunto, mailBody, destinatarios, adjunto);
-
-    }
-
     public static void envioComunicacionPermisoProximaExpiracion(PermisoAccesoDTO permiso) throws Exception {
         DatosContactoBean datosContacto = getDatoContactoPersona(permiso);
         String nombreUsuario = registrador.recogerNombreUsuario(permiso.getCodigoPersona());
